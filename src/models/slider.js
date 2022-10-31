@@ -6,13 +6,23 @@ const SliderSchema = new Schema(
       require: true,
       minlength: 3,
     },
-    image: {
+    url1: {
       type: String,
       require: true,
     },
-    url: {
+    url2: {
       type: String,
       require: true,
+    },
+    url3: {
+      type: String,
+      require: true,
+    },
+    url4: {
+      type: String,
+    },
+    url5: {
+      type: String,
     },
   },
   { timestamps: true },
