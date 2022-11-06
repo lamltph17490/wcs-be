@@ -20,7 +20,7 @@ export const create = async (req, res) => {
 };
 export const list = async (req, res) => {
   try {
-    const products = await Product.find({}).populate("catygoryId").sort("-createdAt").exec();
+    const products = await Product.find({}).sort("-createdAt").exec();
     res.json(products);
   } catch (error) {
     res.status(400).json({

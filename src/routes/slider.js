@@ -6,8 +6,8 @@ const router = Router();
 
 router.get("/slider", list);
 router.get("/slider/:id", read);
-router.delete("/slider/:id", requireSignin, isAuth, isAdmin, remove);
-router.post("/slider", requireSignin, isAuth, isAdmin, create);
-router.put("/slider/:id", requireSignin, isAuth, isAdmin, update);
+router.delete("/slider/:id", remove);
+router.post("/slider", create);
+router.put("/slider/:id", update);
 
 module.exports = router;

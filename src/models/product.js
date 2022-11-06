@@ -22,6 +22,10 @@ const ProductSchema = new Schema(
       type: [ObjectId],
       ref: "Cateproduct",
     },
+    sliderId: {
+      type: ObjectId,
+      ref: "Slider",
+    },
 
     slug: {
       type: String,
