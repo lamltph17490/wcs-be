@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/app.js --exec babel-node -e js",
+    "start:dev": "nodemon ./src/app.js --exec babel-node -e js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "cors": "^2.8.5",
@@ -20,10 +25,10 @@
     "express-jwt": "^7.7.5",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.5",
+    "morgan": "^1.10.0",
     "slugify": "^1.6.5"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
   }
 }
